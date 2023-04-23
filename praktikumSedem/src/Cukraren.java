@@ -1,4 +1,4 @@
-public class Cukraren extends Predajna {
+public class Cukraren extends Predajna<Kolacik> {
 
     public Cukraren(String nazov) {
         super(nazov);

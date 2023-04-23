@@ -20,7 +20,7 @@ public class Kolacik {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s -> Hmotnost:%dg Cena:%f\n", this.nazov, this.hmotnost, this.cena));
+        sb.append(String.format("%s -> Hmotnost: %dg Cena: %.2f€\n", this.nazov, this.hmotnost, this.cena));
         sb.append("   Alergeny: ");
         for (Alergen alergen : this.alergeny) {
             sb.append(alergen.toString() + " ");

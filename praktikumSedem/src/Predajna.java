@@ -18,11 +18,7 @@ public abstract class Predajna<E> {
     public String menu() {
         System.out.println(this.nazov);
         for (E e : this.ponuka) {
-            if (e instanceof Pizza jedlo) {
-                return jedlo.toString();
-            } else if (e instanceof Kolacik jedlo) {
-                return jedlo.toString();
-            }
+            return e.toString();
         }
 
         return "V ponuke nic nemame";

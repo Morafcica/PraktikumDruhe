@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Pizza {
     private ArrayList<Surovina> suroviny;
@@ -18,9 +19,11 @@ public class Pizza {
     }
 
     public void zveganciPizzu() {
-        for (Surovina surovina : this.suroviny) {
+        Iterator<Surovina> inter = this.suroviny.iterator();
+        while (inter.hasNext()) {
+            Surovina surovina = inter.next();
             if (!surovina.isVeganska()) {
-                this.suroviny.remove(surovina);
+                inter.remove();
             }
         }
     }
@@ -45,7 +48,7 @@ public class Pizza {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%s -> Hmotnost:%fg Cena:%f\n", this.nazov, this.dajHmotnost(), this.dajCenu()));
+        sb.append(String.format("%s -> Hmotnost: %.2fg Cena: %.2f€\n", this.nazov, this.dajHmotnost(), this.dajCenu()));
         sb.append("   Zlozenie: ");
         for (Surovina surovina : this.suroviny) {
             sb.append(surovina.getNazov() + ", ");
